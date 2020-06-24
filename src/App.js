@@ -11,7 +11,6 @@ import {Row, Col} from "shards-react";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select/Select";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 
 function App( {smallStats} ) {
@@ -19,7 +18,6 @@ function App( {smallStats} ) {
       <div className="content">
         <Row style={{marginTop: '5%', marginLeft: '4%', marginBottom: '3%'}}>
           <FormControl style={{width: '15%'}} variant="outlined">
-            {/*<InputLabel style={{fontSize: 10, left: 10}} id="fast-selection">Country</InputLabel>*/}
             <Select
                 style={{width: '80%', marginRight: '2%'}}
                 id="fast-selection"

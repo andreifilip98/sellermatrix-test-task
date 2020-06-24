@@ -8,8 +8,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import {
   InputGroup,
   DatePicker,
-  InputGroupAddon,
-  InputGroupText
 } from "shards-react";
 
 import "../assets/range-date-picker.css";
@@ -23,7 +21,6 @@ class RangeDatePicker extends React.Component {
     this.state = {
       startDate: undefined,
       endDate: undefined,
-      fastSelection: undefined,
       date: newDate,
       thisYear: newDate.getFullYear(),
       thisMonth: newDate.getMonth(),
@@ -32,7 +29,6 @@ class RangeDatePicker extends React.Component {
 
     this.handleStartDateChange = this.handleStartDateChange.bind(this);
     this.handleEndDateChange = this.handleEndDateChange.bind(this);
-    this.handleFastSelectionChange = this.handleFastSelectionChange.bind(this);
   }
 
   handleStartDateChange(value) {
@@ -48,14 +44,6 @@ class RangeDatePicker extends React.Component {
     this.setState({
       ...this.state,
       ...{ endDate: new Date(value) }
-    });
-  }
-
-  handleFastSelectionChange(value) {
-
-    this.setState({
-      ...this.state,
-      ...{ startDate: new Date(value.start) , endDate: new Date(value.end)}
     });
   }
 
@@ -83,17 +71,10 @@ class RangeDatePicker extends React.Component {
               className="text-center"
               id="endDate"
           />
-          {/*<InputGroupAddon type="append">*/}
-          {/*  <InputGroupText onClick={() => alert('asd')}>*/}
-          {/*    <i class="fa fa-address-book" aria-hidden="true">&#xE916;</i>*/}
-          {/*  </InputGroupText>*/}
-          {/*</InputGroupAddon>*/}
           <FormControl style={{width: 150, height: 32}} variant="outlined" className={classes.formControl}>
             <InputLabel style={{ fontSize: 11, left: 10, margin: -10, fontColor: '#F4F4F4'}} id="fast-selection">Fast Selection</InputLabel>
             <Select
                 id="fast-selection"
-                value={this.state.fastSelection}
-                // onChange={this.handleFastSelectionChange}
                 label="Fast Selection"
             >
               <MenuItem value="">
